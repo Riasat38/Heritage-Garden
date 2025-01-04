@@ -1,7 +1,7 @@
 `use strict`;
 
 import User from "../Model/userModel.js";
-import validateDate from "./misc.js";
+
 class Recruitment{
     static count =  0;
     constructor(content, contact, creator, jobPosition, deadline){
@@ -10,7 +10,7 @@ class Recruitment{
         this.contact = contact;
         this.creator = creator;
         this.jobPosition = jobPosition,
-        this.deadline = validateDate(deadline),
+        this.deadline = deadline,
         this.createdAt = new Date();
     }
 };
