@@ -1,0 +1,100 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    height: 100%;
+    overflow-y: auto; /* Ensure the main content can scroll */
+  }
+  
+  .page-container {
+    display: flex;
+    min-height: 100vh; /* Ensure full viewport height */
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center elements horizontally */
+  }
+  
+  .fitness-header {
+    text-align: center;
+    margin-bottom: 30px;
+    width: 80%; /* Adjust width to center header */
+    max-width: 800px; /* Optional: set a maximum width */
+    text-align: justify; /* Justify alignment for the text */
+  }
+  
+  .fitness-header h1 {
+    font-size: 2.5rem;
+    color: #1565c0;
+    text-align: center; /* Center align header text */
+  }
+  
+  .fitness-header p {
+    font-size: 1.2rem;
+    color: #424242;
+    margin-top: 10px; /* Adjust top margin to reduce space */
+  }
+  
+  .info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Ensure there is enough gap between boxes */
+    align-items: center; /* Center items horizontally */
+    width: 100%;
+  }
+  
+  .info-item {
+    background-color: #fff;
+    padding: 10px; /* Adjust padding to reduce height */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items within the box */
+    transition: transform 0.2s ease;
+    width: 100%; /* Ensure the box takes full width */
+    max-width: 600px; /* Optional: set a maximum width */
+  }
+  
+  .info-title {
+    font-size: 1.2rem; /* Adjust font size */
+    color: #1565c0;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px; /* Adjust space between title and details */
+  }
+  
+  .info-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-top: 10px; /* Adjust margin to move the checkbox lower */
+  }
+  
+  .info-details {
+    margin-top: 10px; /* Adjust margin */
+    padding-top: 10px; /* Adjust padding */
+    border-top: 1px solid #ccc;
+    text-align: left; /* Ensure left alignment */
+    max-height: 200px; /* Set a max-height for scrolling */
+    overflow-y: auto; /* Add scrollbar if content exceeds max-height */
+  }
+  
+  .info-description {
+    margin-bottom: 10px; /* Add space below the description */
+  }
+  
+  .info-details ul {
+    padding-left: 20px; /* Add padding to bullet points */
+  }
+  
+  .info-details li {
+    margin-bottom: 10px; /* Add space between list items */
+  }
+  

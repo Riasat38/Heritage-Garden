@@ -1,0 +1,48 @@
+.register {
+  text-align: center;
+  padding: 50px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input,
+select {
+  padding: 10px;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+}
+
+button:hover {
+  background-color: #555;
+  color: #ddd;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+
+
+  

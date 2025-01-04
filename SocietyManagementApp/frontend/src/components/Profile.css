@@ -1,0 +1,129 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+.page-container {
+  display: flex;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  overflow-x: auto;
+}
+
+.profile-info {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.profile-info table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.profile-info th, .profile-info td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.profile-info th {
+  background-color: #f9f9f9;
+  font-weight: bold;
+  width: 150px;
+}
+
+.post-rent-button, .post-recruitment-button, .post-notice-button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 5px;
+}
+
+.post-rent-button:hover, .post-recruitment-button:hover, .post-notice-button:hover {
+  background-color: #45a049;
+}
+
+.posts-section {
+  margin-top: 20px;
+}
+
+.post-item {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.post-item p {
+  margin: 5px 0;
+}
+
+.post-item button {
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 5px 10px;
+  background-color: #1565c0;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9em;
+  border-radius: 5px;
+}
+
+.post-item button:hover {
+  background-color: #0d47a1;
+}
+
+.post-rent-form, .post-recruitment-form, .post-notice-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-rent-form label, .post-recruitment-form label, .post-notice-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.post-rent-form input, .post-recruitment-form input, .post-notice-form input,
+.post-rent-form textarea, .post-recruitment-form textarea, .post-notice-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.post-rent-form button, .post-recruitment-form button, .post-notice-form button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 5px;
+}
+
+.post-rent-form button:hover, .post-recruitment-form button:hover, .post-notice-form button:hover {
+  background-color: #45a049;
+}
+
