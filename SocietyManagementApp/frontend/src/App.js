@@ -15,7 +15,6 @@ import Daycare from './components/Daycare';
 import LocalSupport from './components/LocalSupport';
 import Fitness from './components/Fitness';
 import Feedback from './components/Feedback';
-
 import VisitorFeaturePage from './pages/VisitorFeaturePage'
 import BloodDonation from './pages/BloodDonationPage';
 import Profile from './components/Profile';
@@ -49,6 +48,7 @@ const AppContent = () => {
             <Route path="/feedback" element={<Feedback />} />
             <Route path="/visitor" element={<VisitorFeaturePage />} />
             <Route path="/blood-donation" element={<BloodDonation />} />
+
             <Route path="/profile" element={<Profile />} />
           </Routes>
         </div>

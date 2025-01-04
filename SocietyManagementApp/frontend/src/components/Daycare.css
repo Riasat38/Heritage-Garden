@@ -1,0 +1,89 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+  height: 100%;
+  overflow: auto; 
+}
+
+.page-container {
+  display: flex;
+  height: 100vh; 
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto; 
+  background: linear-gradient(135deg, #ffecb3, #ffe082);
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+}
+
+.daycare-header {
+  text-align: center;
+  margin-bottom: 30px;
+  width: 100%; 
+  text-align: justify;
+  max-width: 800px; 
+}
+
+.daycare-header h1 {
+  font-size: 2.5rem;
+  color: #1565c0;
+  text-align: center; 
+}
+
+.daycare-header p {
+  font-size: 1.2rem;
+  color: #424242;
+  margin-top: 5px;
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center; 
+  width: 100%;
+}
+
+.info-item {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: transform 0.2s ease;
+  width: 80%;
+  max-width: 600px;
+  flex-direction: column; 
+}
+
+.info-item:hover {
+  transform: scale(1.05);
+}
+
+.info-title {
+  font-size: 1.5rem;
+  color: #ef6c00;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.info-details {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #ccc;
+  text-align: left; 
+}
+
+.info-details p {
+  font-size: 1rem;
+  color: #424242;
+  margin: 5px 0;
+}

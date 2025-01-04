@@ -17,10 +17,8 @@ import { postVisitorReq, showVisitorReq, updateVisitorReq,
     deleteVisitorReq, resolveVisitorReq, visitorNotify} from "../Controller/visitorController.js";
 
 import {getAllAnnouncements} from "../Controller/announcementController.js";
-import { deleteRentPost, getALLrents, postRent, updateRentPost ,getAllLostAndFound,
-    createLostAndFound,
-    updateLostAndFoundStatus,
-    deleteLostAndFound,} from "../Controller/misc.js";
+import { deleteRentPost, getALLrents, postRent, updateRentPost
+   } from "../Controller/misc.js";
 
 
 //HomePage  router
@@ -97,8 +95,8 @@ router.put('/visitor/:visitorPostId/:action',async(req,res) => {
 
 router.post('/rent-post', postRent);
 router.get('/rent-post', getALLrents);
-router.put('/rent-post/rentPostId', updateRentPost);
-router.delete('/rent-post/rentPostId', deleteRentPost);
+router.put('/rent-post/:rentPostId', updateRentPost);
+router.delete('/rent-post/:rentPostId', deleteRentPost);
 
 // POST: Signing up for bood donation
 router.post("/blood-donation",addBloodDonation);
