@@ -32,9 +32,9 @@ function Login() {
 
       if (response.status === 200) {
         const data = response.data;
-        // Save the token and other user details in localStorage
+        
         localStorage.setItem('user', JSON.stringify({ token: data.token, name: data.user.name, role: data.user.role }));
-        navigate('/home'); // Redirect to the home page
+        navigate('/home'); 
       } else {
         setError('Email or password incorrect. Try again.');
       }

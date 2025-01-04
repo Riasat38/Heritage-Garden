@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Sidebar from './Sidebar';
 import './Directory.css';
-import { getUserFromStorage } from './utils.js'; // Adjust the import path as needed
+import { getUserFromStorage } from './utils.js'; 
 import axios from 'axios';
 
 const DirectoryPage = () => {
@@ -65,7 +65,6 @@ const DirectoryPage = () => {
             <tr key={item._id}>
               {columns.map((col) => {
                 const lowerCaseCol = col.toLowerCase();
-                console.log(`Rendering ${col} for ${item._id}: ${item[lowerCaseCol]}`); // Debugging
                 return <td key={col}>{item[lowerCaseCol]}</td>;
               })}
             </tr>

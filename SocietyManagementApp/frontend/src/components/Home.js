@@ -1,65 +1,51 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import './Home.css';
 import Sidebar from './Sidebar';
 
-function Home() {
-  const [userData, setUserData] = useState(null);
-  const [jobList, setJobList] = useState([]);
-  const navigate = useNavigate();
+const HomePage = () => {
+  const [notices, setNotices] = useState([]);
+  
 
   useEffect(() => {
-    // Fetch user data from the backend
-    const fetchUserData = async () => {
-      const response = await fetch('http://localhost:4069/society/getUserData');
-      const data = await response.json();
-      setUserData(data);
-    };
-    
-    fetchUserData();
-  }, []);
-
-  useEffect(() => {
-    // Fetch job postings if the user is an admin
-    const fetchJobList = async () => {
-      if (userData && userData.admin) {
-        const response = await fetch('http://localhost:4069/society/recruitments');
-        const data = await response.json();
-        setJobList(data.job_list);
+    const fetchNotices = async () => {
+      try {
+        const response = await axios.get('http://localhost:4069/society/homepage');
+        setNotices(response.data);
+      } catch (error) {
+        console.error('Error fetching notices:', error);
       }
     };
 
-    fetchJobList();
-  }, [userData]);
-
-  
+    fetchNotices();
+   
+  }, []);
 
   return (
-    <div className="main-container">
+    <div className="homepage-container">
       <Sidebar />
-          {userData && userData.admin && (
-            <div className="admin-panel">
-              <h4>Admin Panel</h4>
-              <ul className="admin-list">
-                {jobList.map((job) => (
-                  <li key={job.serial}>
-                    <p><strong>Title:</strong> {job.title}</p>
-                    <p><strong>Description:</strong> {job.description}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
       <main className="main-content">
-        <h1>Ekhane Notice add hobe</h1>
-        
-        {/* Additional content can go here */}
+        <h1>Notice and Announcement</h1>
       </main>
+      
+      {notices.length === 0 ? (
+        <p>No notices has been posten yet..</p>
+      ) : (
+        notices.map((notice) => (
+          <div key={notice.id} className="notice-item">
+            <p><strong>Content:</strong> {notice.content}</p>
+            <p><strong>Creator:</strong> {notice.creator}</p>
+            <p><strong>Created At:</strong> {new Date(notice.createdAt).toLocaleDateString()}</p>
+          </div>
+        ))
+      )}
+      
     </div>
   );
-}
+};
 
-export default Home;
+export default HomePage;
+
 
 
 

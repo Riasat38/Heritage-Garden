@@ -4,41 +4,41 @@ body, html {
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
     height: 100%;
-    overflow: hidden; /* Prevent scrolling on the body */
+    overflow: hidden;
   }
   
   .page-container {
     display: flex;
-    height: 100vh; /* Full viewport height */
+    height: 100vh; 
   }
   
   .main-content {
     flex-grow: 1;
     padding: 20px;
-    overflow-y: auto; /* Ensure the main content can scroll */
+    overflow-y: auto; 
     background: linear-gradient(135deg, #e3f2fd, #bbdefb);
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center elements horizontally */
+    flex-direction: column; 
+    align-items: center; 
   }
   
   .feedback-header {
     text-align: center;
     margin-bottom: 30px;
-    width: 80%; /* Adjust width to center header */
-    max-width: 800px; /* Optional: set a maximum width */
-    text-align: justify; /* Justify alignment for the text */
+    width: 80%; 
+    max-width: 800px; 
+    text-align: justify; 
   }
   
   .feedback-header h1 {
     font-size: 2.5rem;
     color: #1565c0;
-    text-align: center; /* Center align header text */
+    text-align: center; 
   }
   
   .feedback-header p {
     font-size: 1.2rem;
     color: #424242;
-    margin-top: 10px; /* Adjust top margin to reduce space */
+    margin-top: 10px; 
   }
   

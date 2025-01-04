@@ -3,17 +3,24 @@ body, html {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Arial', sans-serif;
+  height: 100%; 
+  overflow: hidden; 
 }
 
 .page-container {
   display: flex;
+  flex-direction: column; 
+  min-height: 100vh; 
 }
 
 .main-content {
-  flex-grow: 1;
+  
   padding: 20px;
   background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-  overflow-x: auto;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  overflow-x: hidden; 
 }
 
 .profile-info {
@@ -126,4 +133,3 @@ body, html {
 .post-rent-form button:hover, .post-recruitment-form button:hover, .post-notice-form button:hover {
   background-color: #45a049;
 }
-
