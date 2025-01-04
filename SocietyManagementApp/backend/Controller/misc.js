@@ -2,13 +2,7 @@
 
 import User from "../Model/userModel.js";
 
-function validateDate(date) { 
-        const parsedDate = new Date(date); 
-        if (isNaN(parsedDate.getTime())) { 
-            throw new Error("Invalid date format. Please provide a valid date."); 
-        } 
-        return parsedDate.toLocaleDateString();
-};
+
 class Rent{
     static count= 0;
     constructor(userId, rent_amount, availablefrom, flat_no, description, contact){
@@ -198,4 +192,3 @@ export const deleteLostAndFound = (req, res) => {
         return res.status(500).json({ error: error.message });
     }
 };
-export default validateDate;
