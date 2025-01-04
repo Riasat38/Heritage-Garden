@@ -1,0 +1,21 @@
+.visitor-feature-page {
+  display: flex;
+  padding-left: 250px; /* Ensure content does not overlap sidebar */
+  height: 100vh; /* Ensure the page takes up the full viewport height */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+}
+
+.visitor-form-section {
+  flex: 1;
+  margin-right: 20px; /* Add margin to the right for spacing */
+}
+
+.visitor-list-section {
+  flex: 2;
+  margin-right: 20px; /* Add margin to the right for spacing */
+}
+
+.gatekeeper-form-section {
+  flex: 1;
+  margin-left: auto; /* Aligns the gatekeeper form to the right */
+}
