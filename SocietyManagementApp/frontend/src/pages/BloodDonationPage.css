@@ -1,0 +1,100 @@
+.blood-donation-page {
+  display: flex;
+  flex-direction: column;
+  padding-left: 250px; /* Ensure content does not overlap sidebar */
+  height: 100vh; /* Ensure the page takes up the full viewport height */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+}
+
+.content {
+  flex: 1;
+  padding: 20px; /* Add padding for better spacing */
+}
+
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.donor-list {
+  flex: 2;
+  margin: 0 auto; /* Center the donor list */
+}
+
+.sign-up-form {
+  flex: 1;
+  margin-left: auto; /* Aligns the sign-up form to the right */
+}
+
+.update-form {
+  flex: 1;
+  margin-left: auto;
+}
+
+.donor-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.donor-list li {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.sign-up-form .form-group,
+.update-form .form-group {
+  margin-bottom: 15px;
+}
+
+.sign-up-form label,
+.update-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.sign-up-form select,
+.sign-up-form input,
+.update-form input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.sign-up-form select:focus,
+.sign-up-form input:focus,
+.update-form input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+.sign-up-form button,
+.update-form button {
+  padding: 12px 25px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.sign-up-form button:hover,
+.update-form button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.sign-up-form button:active,
+.update-form button:active {
+  background-color: #004494;
+  transform: translateY(0);
+}

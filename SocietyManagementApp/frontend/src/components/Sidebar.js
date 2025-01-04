@@ -41,6 +41,7 @@ function Sidebar() {
           <li onClick={() => navigate('/fitness')}>Fitness and Mental Health Care</li>
           <li onClick={() => navigate('/feedback')}>Feedback, Complaints and Suggestions</li>
           <li onClick={() => navigate('/visitor')}>Visitor</li>
+          <li onClick={() => navigate('/blood-donation')}>Blood Donation</li>
 
           <li className="separator"></li>
 
