@@ -15,7 +15,7 @@ class Rent{
         this.id = count++;
         this.userId = userId
         this.rent_amount = rent_amount;
-        this.availablefrom = validateDate(availablefrom);
+        this.availablefrom = validateDateavailablefrom;
         this.flat = flat_no,
         this.description = description;
         this.contact = contact;
