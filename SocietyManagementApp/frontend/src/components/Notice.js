@@ -12,7 +12,7 @@ const PostNoticePage = () => {
     const token = getUserFromStorage();
 
     try {
-      await axios.post('http://localhost:4069/society/adminPanel/announcements', {
+      await axios.post('http://localhost:4055/society/adminPanel/announcements', {
         content
       }, {
         headers: {

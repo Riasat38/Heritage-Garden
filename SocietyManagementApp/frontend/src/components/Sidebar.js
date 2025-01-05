@@ -7,7 +7,7 @@ function Sidebar() {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch('http://localhost:4069/society/logout', {
+      const response = await fetch('http://localhost:4055/society/logout', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -29,7 +29,7 @@ function Sidebar() {
   return (
     <aside className="sidebar">
       <div className="sidebar-content">
-        <h3>Features</h3>
+       
         <ul className="feature-list">
           <li onClick={() => navigate('/directory')}>Directory</li>
           <li onClick={() => navigate('/services')}>Maintenance Service</li>

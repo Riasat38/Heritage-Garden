@@ -15,7 +15,7 @@ const PostRentPage = () => {
     const token = getUserFromStorage();
 
     try {
-      await axios.post('http://localhost:4069/society/homepage/rent-post', {
+      await axios.post('http://localhost:4055/society/homepage/rent-post', {
         rent_amount: rentAmount,
         availablefrom: availableFrom,
         flat_no: flatNo,

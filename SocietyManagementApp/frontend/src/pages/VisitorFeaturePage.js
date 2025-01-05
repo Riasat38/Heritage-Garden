@@ -9,7 +9,6 @@ function VisitorFeaturePage() {
   const [visitorRequests, setVisitorRequests] = useState([]);
   const [user, setUser] = useState({});
 
-  // Fetch user
 useEffect(() => {
   const fetchUser = async () => {
     try {
@@ -28,18 +27,17 @@ useEffect(() => {
   fetchUser();
 }, []);
 
-
   const testPost = async () => {
     console.log('test clicked');
 
-    await axios.post('http://localhost:4069/testpost/testbody', { name: 'Test Name' })
+    await axios.post('http://localhost:4077/testpost/testbody', { name: 'Test Name' })
   }
 
   // Fetch visitor requests
   useEffect(() => {
     const fetchRequests = async () => {
       try {
-        const response = await axios.get('http://localhost:4069/society/homepage/visitor', {
+        const response = await axios.get('http://localhost:4077/society/homepage/visitor', {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
           }
@@ -57,7 +55,7 @@ useEffect(() => {
     console.log('Resident form data:', formData);
   
     try {
-      const response = await fetch('http://localhost:4069/society/homepage/visitor', {
+      const response = await fetch('http://localhost:4077/society/homepage/visitor', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -81,10 +79,10 @@ useEffect(() => {
   const handleGatekeeperResolve = async (id) => {
     try {
       console.log('keeper resolve', id);
-      const action = 'resolve';
-  
+      const action = 'resolve';  
       const res = await fetch(`http://localhost:4069/society/homepage/visitor/${id}/${action}`, {
         method: 'PUT',
+
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -109,7 +107,7 @@ useEffect(() => {
     console.log('Gatekeeper form data:', formData);
 
     try {
-      const response = await fetch('http://localhost:4069/society/homepage/visitor', {
+      const response = await fetch('http://localhost:4077/society/homepage/visitor', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

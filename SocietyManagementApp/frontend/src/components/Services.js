@@ -6,24 +6,24 @@ import { getUserFromStorage } from './utils.js';
 
 const MaintenancePage = () => {
   const [user, setUser] = useState(null);
-  const [requests, setRequests] = useState([]); // Ensure requests is initialized as an array
-  const [serviceType, setServiceType] = useState('Electric'); // Service type dropdown
-  const [issueDescription, setIssueDescription] = useState(''); // Description textarea
+  const [requests, setRequests] = useState([]); 
+  const [serviceType, setServiceType] = useState('Electric'); 
+  const [issueDescription, setIssueDescription] = useState(''); 
 
   useEffect(() => {
     const token = getUserFromStorage();
 
     if (!token) {
-      // Redirect to login if no user is found
+       
       window.location.href = '/society/login';
       return;
     }
 
-    setUser({ token }); // Setting the token in the user state
+    setUser({ token }); 
 
     const fetchRequests = async () => {
       try {
-        const response = await axios.get('http://localhost:4069/society/homepage/services', {
+        const response = await axios.get('http://localhost:4055/society/homepage/services', {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
@@ -33,7 +33,7 @@ const MaintenancePage = () => {
         if (Array.isArray(response.data.serviceRequests)) {
           setRequests(response.data.serviceRequests);
         } else {
-          setRequests([]); // Handle non-array response
+          setRequests([]); 
         }
         console.log('Maintenance requests fetched:', response.data.serviceRequests);
       } catch (error) {
@@ -49,7 +49,7 @@ const MaintenancePage = () => {
     const newRequest = { serviceType, description: issueDescription };
 
     try {
-      const response = await axios.post(`http://localhost:4069/society/homepage/services/${serviceType}`, newRequest, {
+      const response = await axios.post(`http://localhost:4055/society/homepage/services/${serviceType}`, newRequest, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -74,7 +74,7 @@ const MaintenancePage = () => {
     const token = user.token;
 
     try {
-      const response = await axios.put(`http://localhost:4069/society/homepage/services/${requestId}`, { description: updatedDescription }, {
+      const response = await axios.put(`http://localhost:4055/society/homepage/services/${requestId}`, { description: updatedDescription }, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -92,7 +92,7 @@ const MaintenancePage = () => {
     const token = user.token;
 
     try {
-      await axios.delete(`http://localhost:4069/society/homepage/services/${requestId}`, {
+      await axios.delete(`http://localhost:4055/society/homepage/services/${requestId}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -110,7 +110,7 @@ const MaintenancePage = () => {
     const token = user.token;
 
     try {
-      const response = await axios.put(`http://localhost:4069/society/homepage/services/${requestId}`, {}, {
+      const response = await axios.put(`http://localhost:4055/society/homepage/services/${requestId}`, {}, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -130,9 +130,9 @@ const MaintenancePage = () => {
         <div key={request._id} className="request-item">
           <p><strong>Service Type:</strong> {request.serviceType}</p>
           <p><strong>Description:</strong> {request.description}</p>
-          <p><strong>Posted by:</strong> {request.user?.name || 'N/A'}</p>
-          <p><strong>Contact Number:</strong> {request.user?.contactno || 'N/A'}</p>
-          <p><strong>Flat Number:</strong> {request.user?.flatno || 'N/A'}</p>
+          <p><strong>Posted by:</strong> {request.user?.name}</p>
+          <p><strong>Contact Number:</strong> {request.user?.contactno}</p>
+          <p><strong>Flat Number:</strong> {request.user?.flatno}</p>
           <button onClick={() => handleUpdateRequest(request._id)}>Update</button>
           <button onClick={() => handleDeleteRequest(request._id)}>Delete</button>
           <button onClick={() => handleResolveRequest(request._id)}>Resolve</button>

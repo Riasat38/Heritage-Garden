@@ -11,22 +11,22 @@ const HelpWall = () => {
   const [posts, setPosts] = useState([]);
   const [helpDescr, setHelpDescr] = useState('');
   const [bloodDonation, setBloodDonation] = useState(false);
-  const [commentContent, setCommentContent] = useState(''); // State for comment content
-
+  const [commentContent, setCommentContent] = useState(''); 
+  
   useEffect(() => {
     const token = getUserFromStorage();
 
     if (!token) {
-      // Redirect to login if no user is found
+      
       window.location.href = '/society/login';
       return;
     }
 
-    setUser({ token }); // Setting the token in the user state
+    setUser({ token }); 
 
     const fetchPosts = async () => {
       try {
-        const response = await axios.get('http://localhost:4069/society/homepage/wall', {
+        const response = await axios.get('http://localhost:4055/society/homepage/wall', {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
@@ -47,7 +47,7 @@ const HelpWall = () => {
     const newPost = { help_descr: helpDescr, bloodDonation };
 
     try {
-      const response = await axios.post('http://localhost:4069/society/homepage/wall', newPost, {
+      const response = await axios.post('http://localhost:4055/society/homepage/wall', newPost, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -69,7 +69,7 @@ const HelpWall = () => {
     const token = user.token;
 
     try {
-      const response = await axios.put(`http://localhost:4069/society/homepage/wall/${postId}/update`, { description: updatedDescription }, {
+      const response = await axios.put(`http://localhost:4055/society/homepage/wall/${postId}/update`, { description: updatedDescription }, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -87,7 +87,7 @@ const HelpWall = () => {
     const token = user.token;
 
     try {
-      const response = await axios.put(`http://localhost:4069/society/homepage/wall/${postId}/resolve`, {}, {
+      const response = await axios.put(`http://localhost:4055/society/homepage/wall/${postId}/resolve`, {}, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -105,7 +105,7 @@ const HelpWall = () => {
     const token = user.token;
 
     try {
-      await axios.delete(`http://localhost:4069/society/homepage/wall/${postId}`, {
+      await axios.delete(`http://localhost:4055/society/homepage/wall/${postId}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -123,7 +123,7 @@ const HelpWall = () => {
     const token = user.token;
 
     try {
-      const response = await axios.post(`http://localhost:4069/society/homepage/wall/${postId}/comment`, { content: commentContent }, {
+      const response = await axios.post(`http://localhost:4055/society/homepage/wall/${postId}/comment`, { content: commentContent }, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -142,7 +142,7 @@ const HelpWall = () => {
     const token = user.token;
 
     try {
-      const response = await axios.put(`http://localhost:4069/society/homepage/wall/${postId}/comment/${commentId}`, { content: updatedContent }, {
+      const response = await axios.put(`http://localhost:4055/society/homepage/wall/${postId}/comment/${commentId}`, { content: updatedContent }, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -160,7 +160,7 @@ const HelpWall = () => {
     const token = user.token;
 
     try {
-      const response = await axios.delete(`http://localhost:4069/society/homepage/wall/${postId}/comments/${commentId}`, {
+      const response = await axios.delete(`http://localhost:4055/society/homepage/wall/${postId}/comments/${commentId}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -177,7 +177,7 @@ const HelpWall = () => {
   const renderPosts = () => (
     <div className="posts-list">
       {posts.map(post => {
-        console.log('Rendering post:', post); // Debugging log
+        console.log('Rendering post:', post); 
         return (
           <div key={post._id} className="post-item">
             <p><strong>Description:</strong> {post.description || 'No description available'}</p>
@@ -196,7 +196,7 @@ const HelpWall = () => {
               {post.comments?.map(comment => (
                 <div key={comment._id} className="comment-item">
                   <p>{comment.content || 'No content'}</p>
-                  <p><strong>By:</strong> {comment.user?.name || 'Anonymous'}</p>
+                  <p><strong>By:</strong> {comment.user?.name || "Anonymous"}</p>
                   {user.id === comment.user?._id && (
                     <div>
                       <button onClick={() => handleUpdateComment(post._id, comment._id, prompt('Update comment:', comment.content))}>Update</button>

@@ -22,7 +22,7 @@ const DirectoryPage = () => {
       try {
         console.log('Token:', token);
 
-        const adminResponse = await axios.get('http://localhost:4069/society/homepage/admin', {
+        const adminResponse = await axios.get('http://localhost:4055/society/homepage/admin', {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ const DirectoryPage = () => {
         console.log('Admin data fetched:', adminResponse.data);
         setAdmins(adminResponse.data);
 
-        const residentStaffResponse = await axios.get('http://localhost:4069/society/homepage/staff', {
+        const residentStaffResponse = await axios.get('http://localhost:4055/society/homepage/staff', {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json',

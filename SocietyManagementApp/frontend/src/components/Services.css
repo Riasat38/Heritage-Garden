@@ -29,7 +29,7 @@
   
   .create-request-section,
   .view-requests-section {
-    flex: 1 1 45%; /* Adjusts width for responsive design */
+    flex: 1 1 45%; 
     background-color: #fff;
     padding: 20px;
     border-radius: 12px;
@@ -39,7 +39,7 @@
   
   .create-request-section:hover,
   .view-requests-section:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
+    transform: translateY(-5px); 
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   }
   

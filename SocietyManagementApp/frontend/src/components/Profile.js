@@ -20,7 +20,7 @@ const ProfilePage = () => {
 
     const fetchUserData = async () => {
       try {
-        const response = await axios.get('http://localhost:4069/society/homepage', {
+        const response = await axios.get('http://localhost:4055/society/homepage', {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'

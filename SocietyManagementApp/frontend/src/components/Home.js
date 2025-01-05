@@ -10,7 +10,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchNotices = async () => {
       try {
-        const response = await axios.get('http://localhost:4069/society/homepage');
+        const response = await axios.get('http://localhost:4055/society/homepage');
         setNotices(response.data);
       } catch (error) {
         console.error('Error fetching notices:', error);
@@ -26,21 +26,25 @@ const HomePage = () => {
       <Sidebar />
       <main className="main-content">
         <h1>Notice and Announcement</h1>
-      </main>
+         
+        <div className="notices-section"> 
+          
       
-      {notices.length === 0 ? (
-        <p>No notices has been posten yet..</p>
-      ) : (
-        notices.map((notice) => (
-          <div key={notice.id} className="notice-item">
-            <p><strong>Content:</strong> {notice.content}</p>
-            <p><strong>Creator:</strong> {notice.creator}</p>
-            <p><strong>Created At:</strong> {new Date(notice.createdAt).toLocaleDateString()}</p>
-          </div>
-        ))
-      )}
-      
+          {notices.length === 0 ? (
+            <p>No notices has been posten yet..</p>
+          ) : (
+            notices.map((notice) => (
+              <div key={notice.id} className="notice-item">
+                <p><strong>Content:</strong> {notice.content}</p>
+                <p><strong>Creator:</strong> {notice.creator}</p>
+                <p><strong>Created At:</strong> {new Date(notice.createdAt).toLocaleDateString()}</p>
+              </div>
+            ))
+          )}
+        </div>
+      </main>   
     </div>
+
   );
 };
 
