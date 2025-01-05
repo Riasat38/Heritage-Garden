@@ -101,12 +101,5 @@ router.post("/recruitments", postRecruitment);
 router.delete("/recruitments/:serial", deleteRecruitment);
 router.put("/recruitments/:serial", updateRecruitment);
 
-router.get("/:id/blood-donation", async (req, res) => {
-    try {
-        await getAllBloodDonations(req, res);
-    } catch (error) {
-        console.error("Error in fetching blood donations:", error);
-        res.status(500).json({ error: "Internal Server Error." });
-    }
-});
+
 export default router;

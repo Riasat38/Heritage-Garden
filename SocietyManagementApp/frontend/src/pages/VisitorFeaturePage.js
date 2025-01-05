@@ -9,24 +9,23 @@ function VisitorFeaturePage() {
   const [visitorRequests, setVisitorRequests] = useState([]);
   const [user, setUser] = useState({});
 
-  // Fetch user
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const response = await axios.get('http://localhost:4077/society/getUser', {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem('token')}`
-          }
-        });
-        const data = response.data;
-        setUser(data.user);
-        console.log('User:', data.user);
-      } catch (error) {
-        console.error('Error fetching user:', error);
-      }
-    };
-    fetchUser();
-  }, []);
+useEffect(() => {
+  const fetchUser = async () => {
+    try {
+      const response = await axios.get('http://localhost:4069/society/getUser', {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`
+        }
+      });
+      const data = response.data;
+      setUser(data.user);
+      console.log('User:', data.user);
+    } catch (error) {
+      console.error('Error fetching user:', error);
+    }
+  };
+  fetchUser();
+}, []);
 
   const testPost = async () => {
     console.log('test clicked');
@@ -53,6 +52,8 @@ function VisitorFeaturePage() {
   }, [user]);
 
   const handleResidentFormSubmit = async (formData) => {
+    console.log('Resident form data:', formData);
+  
     try {
       const response = await fetch('http://localhost:4077/society/homepage/visitor', {
         method: 'POST',
@@ -62,7 +63,7 @@ function VisitorFeaturePage() {
         },
         body: JSON.stringify(formData),
       });
-
+  
       const data = await response.json();
       if (response.ok) {
         setVisitorRequests((prev) => [...prev, data.data]);
@@ -73,18 +74,23 @@ function VisitorFeaturePage() {
       console.error('Error submitting visitor request:', error);
     }
   };
+  
 
   const handleGatekeeperResolve = async (id) => {
     try {
       console.log('keeper resolve', id);
-      const action = 'resolve';
+      const action = 'resolve';  
+      const res = await fetch(`http://localhost:4069/society/homepage/visitor/${id}/${action}`, {
+        method: 'PUT',
 
-      const response = await axios.post(`http://localhost:4077/society/homepage/visitor/${id}/${action}`, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
       });
-      console.log('Keeper Resolve Response: ', response.data);
+  
+      console.log('Keeper Resolve Response:', res);
+      // Update state without refreshing
       setVisitorRequests((prev) =>
         prev.map((req) =>
           req._id === id ? { ...req, resolve_status: true } : req
@@ -94,18 +100,25 @@ function VisitorFeaturePage() {
       console.error('Error resolving visitor request:', error);
     }
   };
+  
+  
 
   const handleGatekeeperFormSubmit = async (formData) => {
+    console.log('Gatekeeper form data:', formData);
+
     try {
       const response = await fetch('http://localhost:4077/society/homepage/visitor', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('token')}`,
         },
         body: JSON.stringify(formData),
       });
 
       const data = await response.json();
+      console.log('Gatekeeper form response:', data);
+
       if (response.ok) {
         console.log(data.message);
       } else {
@@ -147,10 +160,10 @@ function VisitorFeaturePage() {
           </div>
         </>
       ) : null}
-
-      {/* <button onClick={testPost}>Test Post</button> */}
     </div>
   );
+  
+  
 }
 
 export default VisitorFeaturePage;
