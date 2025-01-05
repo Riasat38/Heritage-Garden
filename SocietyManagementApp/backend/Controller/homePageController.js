@@ -159,7 +159,7 @@ export const addCommentToHelpPost = async (req, res) => {
         const { content } = req.body; 
         const userId = req.user.id;  
         const {helpPostId} = req.params;
-        const helpPost = await Help.findById(helpPostId).populate('comments.user', 'name');; 
+        const helpPost = await Help.findById(helpPostId).populate('comments.user', 'user.name');; 
         if (!helpPost) { 
             return res.status(404).json({ error: 'Help post not found' }); 
         }

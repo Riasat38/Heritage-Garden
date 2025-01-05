@@ -24,7 +24,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:4069/society/login', formData, {
+      const response = await axios.post('http://localhost:4055/society/login', formData, {
         headers: {
           'Content-Type': 'application/json',
         },

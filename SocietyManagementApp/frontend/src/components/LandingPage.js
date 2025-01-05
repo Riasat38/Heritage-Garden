@@ -5,6 +5,7 @@ import './LandingPage.css';
 
 function LandingPage() {
   const [rentalListings, setRentalListings] = useState([]);
+  const [recruitmentPosts, setRecruitmentPosts] = useState([]);
   const navigate = useNavigate();
 
   const handleLogin = () => {
@@ -15,29 +16,44 @@ function LandingPage() {
     navigate('/register');
   };
 
+  const handleForgetPassword = () => { 
+    navigate('/register'); 
+  };
+
   useEffect(() => {
     const fetchRentalListings = async () => {
       try {
-        const response = await axios.get('http://localhost:4069/society/homepage/rent-post');
+        const response = await axios.get('http://localhost:4055/society/homepage/rent-post');
         setRentalListings(response.data);
       } catch (error) {
         console.error('Error fetching rental listings:', error);
       }
     };
 
+    const fetchRecruitmentPosts = async () => { 
+      try { 
+        const response = await axios.get('http://localhost:4055/society/adminPanel/recruitments'); 
+        setRecruitmentPosts(response.data); 
+      } catch (error) { 
+        console.error('Error fetching recruitment posts:', error); 
+      }
+    };
+
     fetchRentalListings();
+    fetchRecruitmentPosts();
   }, []);
 
   return (
     <div className="landing-page">
       <div className="welcome-banner">
-        <h2>Welcome to the official Website of Heritage Garden!</h2>
+        <h2>Welcome to the Official Website of Heritage Garden!</h2>
         <p>Everything you need in one Platform!</p>
       </div>
       
       <div className="auth-options">
         <button className="auth-button" onClick={handleLogin}>Login</button>
         <button className="auth-button" onClick={handleRegister}>Register</button>
+        <p className="forget-password" onClick={handleForgetPassword}>Forgot Password?</p>
       </div>
       
       <div className="rentals-section">
@@ -56,6 +72,25 @@ function LandingPage() {
           ))
         )}
       </div>
+      
+      <div className="recruitment-section"> 
+        <h2>Recruitment Posts for Staff</h2>   
+        {recruitmentPosts.length === 0 ? ( 
+          <p>No recruitment posts available at the moment.</p> 
+          ) : ( 
+            recruitmentPosts.map((post) => ( 
+            <div key={post.id} className="recruitment-item"> 
+            <p><strong>Job Position:</strong> {post.jobPosition}</p> 
+            <p><strong>Description:</strong> {post.description}</p> 
+            <p><strong>Contact:</strong> {post.contact}</p> 
+            <p><strong>Deadline:</strong> {new Date(post.deadline).toLocaleDateString()}</p> 
+          </div> 
+        )) 
+      )} 
+    </div>
+
+
+
     </div>
   );
 }

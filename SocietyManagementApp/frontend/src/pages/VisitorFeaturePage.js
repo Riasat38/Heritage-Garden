@@ -13,7 +13,7 @@ function VisitorFeaturePage() {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get('http://localhost:4069/society/getUser', {
+        const response = await axios.get('http://localhost:4077/society/getUser', {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
           }
@@ -31,14 +31,14 @@ function VisitorFeaturePage() {
   const testPost = async () => {
     console.log('test clicked');
 
-    await axios.post('http://localhost:4069/testpost/testbody', { name: 'Test Name' })
+    await axios.post('http://localhost:4077/testpost/testbody', { name: 'Test Name' })
   }
 
   // Fetch visitor requests
   useEffect(() => {
     const fetchRequests = async () => {
       try {
-        const response = await axios.get('http://localhost:4069/society/homepage/visitor', {
+        const response = await axios.get('http://localhost:4077/society/homepage/visitor', {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
           }
@@ -54,7 +54,7 @@ function VisitorFeaturePage() {
 
   const handleResidentFormSubmit = async (formData) => {
     try {
-      const response = await fetch('http://localhost:4069/society/homepage/visitor', {
+      const response = await fetch('http://localhost:4077/society/homepage/visitor', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -79,7 +79,7 @@ function VisitorFeaturePage() {
       console.log('keeper resolve', id);
       const action = 'resolve';
 
-      const response = await axios.post(`http://localhost:4069/society/homepage/visitor/${id}/${action}`, {
+      const response = await axios.post(`http://localhost:4077/society/homepage/visitor/${id}/${action}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
@@ -97,7 +97,7 @@ function VisitorFeaturePage() {
 
   const handleGatekeeperFormSubmit = async (formData) => {
     try {
-      const response = await fetch('http://localhost:4069/society/homepage/visitor', {
+      const response = await fetch('http://localhost:4077/society/homepage/visitor', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

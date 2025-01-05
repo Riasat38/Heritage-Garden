@@ -20,7 +20,7 @@ import connectDB from "./config/db.js";
 connectDB();
 dotenv.config()
 
-const port =  process.env.PORT || 4069;
+const port =  process.env.PORT || 4055;
 const app = express();
 
 //middleware to check HTTP request type and origin

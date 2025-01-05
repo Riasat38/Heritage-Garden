@@ -14,7 +14,7 @@ const PostRecruitmentPage = () => {
     const token = getUserFromStorage();
 
     try {
-      await axios.post('http://localhost:4069/society/adminPanel/recruitments', {
+      await axios.post('http://localhost:4055/society/adminPanel/recruitments', {
         jobPosition,
         description,
         deadline
