@@ -131,7 +131,7 @@ const HelpWall = () => {
       });
 
       setPosts(posts.map(post => post._id === postId ? response.data.helpPost : post));
-      setCommentContent(''); // Clear comment content after submission
+      setCommentContent(''); 
       console.log('Comment added:', response.data.helpPost);
     } catch (error) {
       console.error('Failed to add comment:', error);

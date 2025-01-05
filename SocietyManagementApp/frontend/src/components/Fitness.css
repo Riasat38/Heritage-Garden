@@ -4,12 +4,12 @@ body, html {
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
     height: 100%;
-    overflow-y: auto; /* Ensure the main content can scroll */
+   
   }
   
   .page-container {
     display: flex;
-    min-height: 100vh; /* Ensure full viewport height */
+    min-height: 100vh; 
   }
   
   .main-content {
@@ -17,84 +17,85 @@ body, html {
     padding: 20px;
     background: linear-gradient(135deg, #e3f2fd, #bbdefb);
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center elements horizontally */
+    flex-direction: column; 
+    align-items: center; 
   }
   
   .fitness-header {
     text-align: center;
     margin-bottom: 30px;
-    width: 80%; /* Adjust width to center header */
-    max-width: 800px; /* Optional: set a maximum width */
-    text-align: justify; /* Justify alignment for the text */
+    width: 80%; 
+    max-width: 800px; 
+    text-align: justify; 
   }
   
   .fitness-header h1 {
     font-size: 2.5rem;
     color: #1565c0;
-    text-align: center; /* Center align header text */
+    text-align: center;
   }
   
   .fitness-header p {
     font-size: 1.2rem;
     color: #424242;
-    margin-top: 10px; /* Adjust top margin to reduce space */
+    margin-top: 10px; 
   }
   
   .info-list {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Ensure there is enough gap between boxes */
-    align-items: center; /* Center items horizontally */
+    gap: 15px; 
+    align-items: center; 
     width: 100%;
+    overflow: hidden;
   }
   
   .info-item {
     background-color: #fff;
-    padding: 10px; /* Adjust padding to reduce height */
+    padding: 10px; 
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items within the box */
+    flex-direction: column; 
+    align-items: center;
     transition: transform 0.2s ease;
-    width: 100%; /* Ensure the box takes full width */
-    max-width: 600px; /* Optional: set a maximum width */
+    width: 100%; 
+    max-width: 600px; 
   }
   
   .info-title {
-    font-size: 1.2rem; /* Adjust font size */
+    font-size: 1.2rem; 
     color: #1565c0;
     cursor: pointer;
     font-weight: bold;
-    margin-bottom: 10px; /* Adjust space between title and details */
+    margin-bottom: 10px;
   }
   
   .info-checkbox {
     width: 20px;
     height: 20px;
     cursor: pointer;
-    margin-top: 10px; /* Adjust margin to move the checkbox lower */
+    margin-top: 10px; 
   }
   
   .info-details {
-    margin-top: 10px; /* Adjust margin */
-    padding-top: 10px; /* Adjust padding */
+    margin-top: 10px;
+    padding-top: 10px; 
     border-top: 1px solid #ccc;
-    text-align: left; /* Ensure left alignment */
-    max-height: 200px; /* Set a max-height for scrolling */
-    overflow-y: auto; /* Add scrollbar if content exceeds max-height */
+    text-align: left; 
+    max-height: 200px; 
+    overflow-y: auto; 
   }
   
   .info-description {
-    margin-bottom: 10px; /* Add space below the description */
+    margin-bottom: 10px; 
   }
   
   .info-details ul {
-    padding-left: 20px; /* Add padding to bullet points */
+    padding-left: 20px; 
   }
   
   .info-details li {
-    margin-bottom: 10px; /* Add space between list items */
+    margin-bottom: 10px;
   }
   

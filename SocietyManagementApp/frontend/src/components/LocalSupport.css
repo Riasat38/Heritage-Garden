@@ -4,49 +4,49 @@ body, html {
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
     height: 100%;
-    overflow: auto; 
+    overflow: hidden;
   }
   
   .page-container {
     display: flex;
-    height: 100vh; /* Full viewport height */
+    height: 100vh; 
   }
   
   .main-content {
     flex-grow: 1;
     padding: 20px;
-    overflow-y: auto; /* Ensure the main content can scroll */
+    overflow-y: auto; 
     background: linear-gradient(135deg, #e3f2fd, #bbdefb);
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center elements horizontally */
+    flex-direction: column; 
+    align-items: center; 
   }
   
   .local-support-header {
     text-align: center;
     margin-bottom: 30px;
     width: 100%; 
-    max-width: 800px; /* Optional: set a maximum width */
-    text-align: justify; /* Justify alignment for the text */
+    max-width: 800px; 
+    text-align: justify; 
   }
   
   .local-support-header h1 {
     font-size: 2.5rem;
     color: #1565c0;
-    text-align: center; /* Center align header text */
+    text-align: center; 
   }
   
   .local-support-header p {
     font-size: 1.2rem;
     color: #424242;
-    margin-top: 10px; /* Adjust top margin to reduce space */
+    margin-top: 10px;
   }
   
   .info-list {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    align-items: center; /* Center items horizontally */
+    align-items: center; 
     width: 100%;
   }
   
@@ -65,7 +65,7 @@ body, html {
   }
   
   .info-title {
-    font-size: 1.2rem; /* Reduce font size to make the box smaller */
+    font-size: 1.2rem; 
     color: #1565c0;
     cursor: pointer;
     font-weight: bold;
@@ -75,27 +75,27 @@ body, html {
     width: 20px;
     height: 20px;
     cursor: pointer;
-    margin-right: 10px; /* Ensure space between checkbox and label */
+    margin-right: 10px; 
   }
   
   .info-details {
     margin-top: 10px;
     padding-top: 10px;
     border-top: 1px solid #ccc;
-    text-align: left; /* Ensures left alignment */
-    max-height: 200px; /* Set a max-height for scrolling */
-    overflow-y: auto; /* Add scrollbar if content exceeds max-height */
+    text-align: left; 
+    max-height: 200px; 
+    overflow-y: auto; 
   }
   
   .info-details ul {
-    padding-left: 20px; /* Add padding to bullet points */
+    padding-left: 20px; 
   }
   
   .info-details li {
-    margin-bottom: 10px; /* Add space between list items */
+    margin-bottom: 10px; 
   }
   
   .info-detail-item {
-    margin-bottom: 10px; /* Add some space between detail items */
+    margin-bottom: 10px; 
   }
   
