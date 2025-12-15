@@ -16,3 +16,6 @@ As the team lead, I played a crucial role in driving the project's development. 
 * **Frontend:** React.js 
 * **Backend:** Node.js, Express.js
 * **Database:** MongoDB
+
+
+** This is the latest version of the project as previous one (https://github.com/Riasat38/Society-Management-.git) ran into some git issues 
